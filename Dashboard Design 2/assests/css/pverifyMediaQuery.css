@@ -1,0 +1,15 @@
+@media only screen and (min-device-width: 1024px)
+and (max-device-width:1439px){
+    .sidebar button {
+        font-size: 12px;
+    }
+    .bi{
+        font-size: 16px;
+    }
+    .dashboardPverify a {
+        font-size: 12px;
+    }
+    .sidebar .dropdownMenu li a {
+        font-size: 12px;
+    }
+}

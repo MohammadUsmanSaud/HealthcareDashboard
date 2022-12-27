@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PVerify Dashboard Login</title>
+    <link rel="icon" href="../assests/images/logotop.png">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!-- Css file -->
+    <link rel="stylesheet" type="text/css" href="../assests/css/pverify.css">
+    <link rel="stylesheet" type="text/css" href="../assests/css/pverifyMediaQuery.css">
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
+    <!-- Table css -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css"> -->
+    <link rel="stylesheet" type="text/css" href="../assests/css/datatables.css">
+    <link rel="stylesheet" type="text/css" href="../assests/css/datatables.css">
+
+
+</head>
+<body>
+
+    <!-- Login -->
+    <section id="main-wrapper" class="dashboardPverify user">
+        <div class="sidebar buttonSmall">
+            <!-- <div class="logoSidebar mb-4 mt-2">
+                <img src="../assests/images/logo.png" class="img-fluid" alt="#">
+            </div> -->
+            <div class="logoBig mt-2 mb-4">
+                <img src="../assests/images/logo.png" class="img-fluid" alt="">
+            </div>
+            <div class="logoSmall mt-2 mb-4 px-2 d-none">
+                <img src="../assests/images/logotop.png" class="img-fluid" alt="">
+            </div>
+            <button type="button" onclick="dropdownActive()" class="block list-group-item"><i class="bi bi-compass me-2"></i>dashboard<i class="bi ms-5 bi-chevron-down"></i><div class="mt-2 sidebarSmallIcon"><i class="bi bi-chevron-down"></i></div></button>
+            <div id="dropdownDiv">
+                <ul class="dropdownMenu">
+                    <li><a class="dropdown-item" href="#">Home</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                </ul>
+            </div>
+            <button type="button" onclick="dropdownActiveMedical()" class="mt-3 block list-group-item"><i class="bi bi-handbag me-2"></i>medical history<i class="bi ms-3 bi-chevron-down"></i><div class="mt-2 sidebarSmallIcon"><i class="bi bi-chevron-down"></i></div></button>
+            <div id="dropdownDivMedical">
+                <ul class="dropdownMenu">
+                    <li><a class="dropdown-item" href="#">Medical</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                </ul>
+            </div>
+            <button type="button" onclick="dropdownActiveDoctor()" class="mt-3 block list-group-item"><i class="bi bi-file-bar-graph me-4"></i>Doctors<i class="bi ms-5 bi-chevron-down"></i><div class="mt-2 sidebarSmallIcon"><i class="bi bi-chevron-down"></i></div></button>
+            <div id="dropdownDivDoctor">
+                <ul class="dropdownMenu ">
+                    <li><a class="dropdown-item" href="#">Doctors List</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                </ul>
+            </div>
+            <a href="#" class="mt-3 list-group-item"><i class="bi bi-card-list me-2"></i><span>test price list</span></a>
+            <a href="#" class="mt-3 list-group-item"><i class="bi bi-question-square me-2"></i><span>help</span></a>
+            <a href="#" class="mt-3 list-group-item"><i class="bi bi-gear me-2"></i><span>settings</span></a>
+            <a href="#" class="mt-3 list-group-item active"><i class="bi bi-person-circle me-2"></i><span>user</span></a>
+        </div>
+          
+        <div class="content p-4">
+            <div class="row">
+                <div class="col-md-8">
+                    <h5>Hi Lab Admin,</h5>
+                    <h3>Welcome back 👋</h3> 
+                </div>
+                <div class="col-md-3">
+                    <form class="d-flex">
+                        <button class="btn" type="submit"><i class="bi bi-search"></i></button>
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    </form>
+                </div>
+                <div class="col-md-1">
+                    <div class="d-flex">
+                        <div>
+                            <div class="notification">
+                                <div class="popup" onclick="popupFunction()"><i class="bi bi-bell"></i>
+                                    <span class="popuptext" id="myPopup">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h4>Notification</h4>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="d-flex align-items-center mt-3">
+                                                    <div class="flex-shrink-0">
+                                                        <div style="background: #F6FBFF; padding: 10px;">
+                                                            <i class="bi bi-chat-left-text"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1 ms-3">
+                                                        <h6>Emerson Curtis <span style="color: #CED0D8;">@curtis</span></h6>
+                                                        <h6 style="color: #CED0D8;">Comment On <span style="color:#3A3939">Coursea-Dashboard Courses</span></h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="d-flex align-items-center mt-3">
+                                                    <div class="flex-shrink-0">
+                                                        <div style="background: #FFF3F2;; padding: 10px;">
+                                                            <i class="bi bi-hand-thumbs-up"></i>                                        
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1 ms-3">
+                                                        <h6>Marley Geidt <span style="color: #CED0D8;">@marley</span></h6>
+                                                        <h6 style="color: #CED0D8;">Likes on <span style="color:#3A3939">Coursea-Dashboard Courses</span></h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="businessBtn mt-3">
+                                                    <a src="#" style="color: #222B50;">See All Notifications</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>                        
+                        <button onclick="myFunction()" class="hamburger mx-3"><i class="bi bi-list"></i></button>
+                    </div>
+                
+                </div>
+                <div class="col-md-12 mt-4">
+                    <h5>Dashboard</h5>
+                </div>
+                <div class="col-md-6 col-lg-4 mt-3">
+                    <div class="graphBg pt-3 pb-3 ps-3 pe-3">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0">
+                                <div>
+                                    <h6>total records</h6>
+                                </div>
+                                <img src="../assests/images/Graph1.png" class="img-fluid" alt="#">
+                            </div>
+                            <div class="flex-grow-1">
+                                <div style="float: right;">
+                                    <p>Records</p>
+                                    <h3 style="color: #6C5DD3;">20</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mt-3">
+                    <div class="graphBg pt-2 ps-3 pb-2 pe-3">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0">
+                                <div class="text-center">
+                                    <h6 style="margin-bottom: 3px;">pending</h6>
+                                    <p style="margin-bottom: 5px;">Records</p>
+                                    <h3 style="color: #6C5DD3;">20</h3>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <div style="float: right;">
+                                    <img src="../assests/images/Graph2.png" class="img-fluid" alt="#">
+                                </div>
+                            </div>
+                        </div>
+                        <p style="color: #8F95B2; text-align: left; margin-bottom: 3px;">Last update yesterday</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mt-3">
+                    <div class="graphBg pt-2 ps-3 pb-2">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0 text-center">
+                                <h6>pending</h6>
+                                <p>Records</p>
+                                <h3 style="color: #6C5DD3; margin-bottom: 10px;">0</h3>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <!-- <img src="../assests/images/Graph2.png" alt="#"> -->
+                                <h6 style="text-align: left;">Doctor’s Approval</h6>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+                <div class="col-12 mt-5">
+                    <div class="tableBg pb-4">
+                        <table id="table_id" class="display">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Position</th>
+                                    <th>Country</th>
+                                    <th>Status</th>
+                                    <th>Role</th>
+                                    <th>Option</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="flex-shrink-0">
+                                              <img src="../assests/images/color.png" alt="#">
+                                            </div>
+                                            <div class="flex-grow-1 ms-3">
+                                                <h5>Amanda Harvey</h5><h6>amanda@example.com</h6>
+                                            </div>
+                                          </div>
+                                    </td>
+                                    <td><h5>Director</h5><h6>Human Resources</h6></td>
+                                    <td>United Kingdom</td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="flex-shrink-0">
+                                                <span class="dotActive"></span>
+                                            </div>
+                                            <div class="flex-grow-1 ms-3">
+                                             Active
+                                            </div>
+                                          </div>
+                                    </td>
+                                    <td>Admin</td>
+                                    <td><button class="tableViewBtn"><i class="bi bi-pencil me-3"></i>Edit</button></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="flex-shrink-0">
+                                              <img src="../assests/images/color2.png" alt="#">
+                                            </div>
+                                            <div class="flex-grow-1 ms-3">
+                                                <h5>John Isner</h5><h6>john@example.com</h6>
+                                            </div>
+                                          </div>
+                                    </td>
+                                    <td><h5>Branding Products</h5><h6>Seller</h6></td>
+                                    <td>United Kingdom</td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="flex-shrink-0">
+                                                <span class="dotPending"></span>
+                                            </div>
+                                            <div class="flex-grow-1 ms-3">
+                                             Pending
+                                            </div>
+                                          </div>
+                                    </td>
+                                    <td>employee</td>
+                                    <td><button class="tableViewBtn"><i class="bi bi-pencil me-3"></i>Edit</button></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="flex-shrink-0">
+                                              <img src="../assests/images/color.png" alt="#">
+                                            </div>
+                                            <div class="flex-grow-1 ms-3">
+                                                <h5>Amanda Harvey</h5><h6>amanda@example.com</h6>
+                                            </div>
+                                          </div>
+                                    </td>
+                                    <td><h5>Director</h5><h6>Human Resources</h6></td>
+                                    <td>United Kingdom</td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="flex-shrink-0">
+                                                <span class="dotSuspended"></span>
+                                            </div>
+                                            <div class="flex-grow-1 ms-3">
+                                             Suspended
+                                            </div>
+                                          </div>
+                                    </td>
+                                    <td>Admin</td>
+                                    <td><button class="tableViewBtn"><i class="bi bi-pencil me-3"></i>Edit</button></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="flex-shrink-0">
+                                              <img src="../assests/images/color.png" alt="#">
+                                            </div>
+                                            <div class="flex-grow-1 ms-3">
+                                                <h5>Amanda Harvey</h5><h6>amanda@example.com</h6>
+                                            </div>
+                                          </div>
+                                    </td>
+                                    <td><h5>Director</h5><h6>Human Resources</h6></td>
+                                    <td>United Kingdom</td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="flex-shrink-0">
+                                                <span class="dotActive"></span>
+                                            </div>
+                                            <div class="flex-grow-1 ms-3">
+                                             Active
+                                            </div>
+                                          </div>
+                                    </td>
+                                    <td>Admin</td>
+                                    <td><button class="tableViewBtn"><i class="bi bi-pencil me-3"></i>Edit</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/d03f1168b0.js" crossorigin="anonymous"></script>
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    
+    <script src="../assests/js/pverify.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../assests/js/datatables.js"></script>
+    <script>
+        $(document).ready( function () {
+        $('#table_id').DataTable();
+    });
+
+    $('#table_id').DataTable({
+     language: { search: '', searchPlaceholder: "Search" },
+    });
+
+    $(".list-group-item").click(function() {
+              
+              // Select all list items
+              var listItems = $(".list-group-item");
+                
+              // Remove 'active' tag for all list items
+              for (let i = 0; i < listItems.length; i++) {
+                  listItems[i].classList.remove("active");
+              }
+                
+              // Add 'active' tag for currently selected item
+              this.classList.add("active");
+          });
+    </script>
+    
+</body>
+</html>
